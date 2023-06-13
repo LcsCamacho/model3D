@@ -70,7 +70,7 @@ const ComputersCanvas = () => {
   const [rotation, setRotation] = useState(0);
   const rollDice = () => {
     // Defina a duração total da animação (em segundos)
-    const animationDuration = 4;
+    const animationDuration = 2;
 
     // Defina o número de quadros por segundo (FPS) da animação
     const framesPerSecond = 60;
@@ -79,16 +79,41 @@ const ComputersCanvas = () => {
     const rotationPerFrame =
       (Math.PI * 2) / (animationDuration * framesPerSecond);
 
+    // Defina os parâmetros de aceleração e desaceleração
+    const accelerationDuration = animationDuration * 0.2; // Duração da aceleração inicial (20% da duração total)
+    const decelerationDuration = animationDuration * 0.3; // Duração da desaceleração final (30% da duração total)
+    const peakSpeed = 10; // Velocidade máxima de rotação (ajuste de acordo com a velocidade desejada)
+
     // Inicialize a rotação atual dos dados como 0
     setRotation(0);
 
     // Crie um loop de animação usando requestAnimationFrame
     const animate = (timestamp: number) => {
-      const startTime = performance.now();
-
-      // Calcule a rotação atual com base no tempo decorrido
+      // Calcule o tempo decorrido desde o início da animação
       const elapsedTime = timestamp - startTime;
-      const currentRotation = rotationPerFrame * (elapsedTime / 1000);
+
+      // Calcule a rotação atual com base no tempo decorrido e os parâmetros de aceleração e desaceleração
+      let currentRotation = 0;
+      if (elapsedTime < accelerationDuration * 1000) {
+        // Aceleração inicial
+        const accelerationTime = elapsedTime / 1000;
+        currentRotation =
+          (0.5 * accelerationTime * accelerationTime * peakSpeed) /
+          accelerationDuration;
+      } else if (
+        elapsedTime <
+        (animationDuration - decelerationDuration) * 1000
+      ) {
+        // Velocidade máxima de rotação
+        currentRotation = peakSpeed;
+      } else {
+        // Desaceleração final
+        const decelerationTime =
+          (elapsedTime - (animationDuration - decelerationDuration) * 1000) /
+          1000;
+        const decelerationProgress = decelerationTime / decelerationDuration;
+        currentRotation = (1 - 0.5 * (1 - decelerationProgress)) * peakSpeed;
+      }
 
       // Atualize a rotação dos dados
       setRotation(currentRotation);
@@ -100,7 +125,8 @@ const ComputersCanvas = () => {
     };
 
     // Inicie a animação
-    requestAnimationFrame(() => animate(50));
+    const startTime = performance.now();
+    requestAnimationFrame(animate);
   };
   return (
     <>

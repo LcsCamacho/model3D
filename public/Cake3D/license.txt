@@ -1,0 +1,11 @@
+Model Information:
+* title:	Sprinkle Cake!
+* source:	https://sketchfab.com/3d-models/sprinkle-cake-966f276fe12e41d8823f43b9b33e7895
+* author:	Kigha (https://sketchfab.com/Kigha)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Sprinkle Cake!" (https://sketchfab.com/3d-models/sprinkle-cake-966f276fe12e41d8823f43b9b33e7895) by Kigha (https://sketchfab.com/Kigha) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

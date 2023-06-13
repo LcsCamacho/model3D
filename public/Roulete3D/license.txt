@@ -1,0 +1,11 @@
+Model Information:
+* title:	Roulette
+* source:	https://sketchfab.com/3d-models/roulette-0eff056ac99f4f6d8be474c7a1a7fdf8
+* author:	Kristian (https://sketchfab.com/nadjkristian)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Roulette" (https://sketchfab.com/3d-models/roulette-0eff056ac99f4f6d8be474c7a1a7fdf8) by Kristian (https://sketchfab.com/nadjkristian) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
